@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GeoLocatorAI</title>
-  </head>
-  <body>
-    <h1>Welcome to GeoLocatorAI</h1>
-  </body>
+<head>
+  <title>GeoLocatorAI</title>
+</head>
+<body>
+  <h1>Welcome to GeoLocatorAI</h1>
+
+  <input type="file" id="imageInput" accept="image/*" />
+  <p id="result">Upload an image to see predicted location.</p>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById("imageInput").addEventListener("change", handleImageUpload);
+  </script>
+</body>
 </html>
+
