@@ -23,3 +23,11 @@ Longitude: ${result.prediction.longitude}
 Confidence: ${result.prediction.confidence}`;
 
 }
+function submitFeedback(isAccurate) {
+  const responseText = isAccurate ? "Thanks for your feedback! ✅" : "Thanks for your feedback. We'll improve! ⚠️";
+  document.getElementById("feedback-response").innerText = responseText;
+
+  // Optional: send feedback to server or log to console
+  console.log("User feedback:", isAccurate);
+}
+
