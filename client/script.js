@@ -18,14 +18,17 @@ async function submitImage() {
     const result = await response.json();
     console.log("Received from server:", result);  // 👈 Debugging line
 
-    document.getElementById('result').innerHTML = `
-        🌐 Predicted Location:<br>
-        Country: ${result.country}<br>
-        Region: ${result.region}<br>
-        Latitude: ${result.latitude}<br>
-        Longitude: ${result.longitude}<br>
-        Confidence: ${(result.confidence * 100).toFixed(1)}%
-    `;
+    const prediction = result.prediction;
+
+document.getElementById('result').innerHTML = `
+    🌐 Predicted Location:<br>
+    Country: ${prediction.country}<br>
+    Region: ${prediction.region}<br>
+    Latitude: ${prediction.latitude}<br>
+    Longitude: ${prediction.longitude}<br>
+    Confidence: ${(prediction.confidence * 100).toFixed(1)}%
+`;
+
 }
 
 function submitFeedback(isAccurate) {
