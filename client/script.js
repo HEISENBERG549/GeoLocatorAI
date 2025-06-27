@@ -16,6 +16,7 @@ async function submitImage() {
   });
 
   const result = await response.json();
+  console.log("API result:", result);
   document.getElementById('result').innerText =
   `🌍 Predicted Location:
 Country: ${result.country}
