@@ -16,5 +16,10 @@ async function submitImage() {
   });
 
   const result = await response.json();
-  document.getElementById('result').innerText = `Predicted location: ${result.location}`;
+  document.getElementById('result').innerText =
+  `🌍 Predicted Location:
+Latitude: ${result.prediction.latitude}
+Longitude: ${result.prediction.longitude}
+Confidence: ${result.prediction.confidence}`;
+
 }
