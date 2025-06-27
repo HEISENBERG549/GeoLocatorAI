@@ -19,6 +19,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // POST /predict — accepts image, returns dummy prediction
 app.post('/predict', upload.single('image'), (req, res) => {
+
   if (!req.file) return res.status(400).json({ error: 'Image required' });
 
   // In real logic, run AI prediction here
